@@ -1,13 +1,12 @@
 package data.singleton;
 
 public class Single {
-    private int value;
+    private volatile int value;  //marked as volatile solved the problem
     private static Single instance;
 
     public Single(int value) {
         this.value = value;
     }
-
 
     public static Single getInstance(int value) {
         if (instance == null) {
